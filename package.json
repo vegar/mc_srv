@@ -1,0 +1,21 @@
+{
+  "author": "Vegar Vikan",
+  "name": "MCLauncher",
+  "description": "Manage a Minecraft Server instance with JavaScript",
+  "version": "0.0.1",
+  "repository": {
+    "url": "git@bitbucket.org:format71/mclauncher.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+
+    },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

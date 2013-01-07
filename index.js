@@ -8,7 +8,7 @@ module.exports = (function () {
 
         return {
             get: function (key) {
-                return configuration[key]
+                return configuration[key];
             },
             set: function (key, value) {
                 configuration[key] = value;
@@ -16,8 +16,8 @@ module.exports = (function () {
         };
     }();
 
-    minecraft.Definition = require('./definition');
-    minecraft.Server = require('./server');
+    minecraft.Definition = require('./lib/definition');
+    minecraft.Server = require('./lib/server');
     minecraft.Server.Configuration = minecraft.Configuration;
 
     return minecraft;
