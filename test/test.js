@@ -42,6 +42,7 @@ describe('Server', function(){
         it('should launch process', function(){
             this.server.start();
             assert(this.server.process);
+            assert.equal(this.server.process.arguments[1], this.server.definition.jarfile);
         });
 
         it('should start in right directory', function(){
