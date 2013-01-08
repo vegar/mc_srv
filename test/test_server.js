@@ -1,5 +1,6 @@
 var assert = require("assert"),
- 
+    should = require("should"),
+
     launcher = require('..'),
     fakeSpawn = require('./fake_spawn').spawn,
     path = require('path');
@@ -8,8 +9,7 @@ describe('Server', function(){
     var definition = { name: "Test Server", jarfile: "test_server.jar" };
     
     beforeEach(function(){
-        launcher.Configuration.set('base path', '/minecraft');
-
+        launcher.Configuration.basePath = '/minecraft';
         this.server = new launcher.Server(definition, fakeSpawn);
     });
 
