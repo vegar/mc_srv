@@ -4,21 +4,6 @@ var assert = require("assert"),
     fakeSpawn = require('./fake_spawn').spawn,
     path = require('path');
 
-describe('MCLaucnher', function(){
-    var mcl = require('..').Configuration;
-
-    describe('Configuration', function(){
-        it('should remember values', function(){
-            mcl.set('key', 'value');
-            assert.equal(mcl.get('key'), 'value');
-        });
-
-        it('should return undefined for unknown keys', function(){
-            assert.equal(typeof mcl.get('unknown key'), 'undefined');
-        });
-    });
-});
-
 describe('Server', function(){
     var definition = { name: "Test Server", jarfile: "test_server.jar" };
     
