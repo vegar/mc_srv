@@ -10,7 +10,9 @@
   "scripts": {
     "test": "mocha"
   },
-  "dependencies": {},
+  "dependencies": {
+      "underscore": "*"
+  },
   "devDependencies": {
 
     },

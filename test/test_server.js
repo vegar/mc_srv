@@ -83,4 +83,49 @@ describe('Server', function(){
             this.server.send("message");
         });
     });
+
+    describe('notifications', function(){
+        beforeEach(function(){
+           this.server.start();
+        });
+
+        it("should emit 'data' event on output", function(done){
+            var expectedData = 'some data';
+
+            this.server.on('data', function(data){
+                data.should.equal(expectedData);
+                done();
+            });
+
+            this.server.process.stderr.write(expectedData);
+        });
+
+        it("should emit 'player joined' on connection", function(done){
+            this.server.on('player joined', function(player){
+                player.should.equal('vvikan');
+                done();
+            });
+
+            this.server.process.stderr.write('2012-10-10 22:15:12 [INFO] vvikan[/192.168.18.190:51347] logged in with entity id 632 at ([world] -763.8980643569004, 63.0, -281.469472670575)');
+        });
+
+        it("should emit 'player left' on disconnect", function(done){
+            this.server.on('player left', function(player){
+                player.should.equal('vvikan');
+                done();
+            });
+
+            this.server.process.stderr.write('2012-10-10 22:16:00 [INFO] vvikan lost connection: disconnect.quitting');
+        })
+
+        it("should emit 'chat' on chat message", function(done){
+            this.server.on('chat', function(player, message){
+                player.should.equal('vvikan');
+                message.should.equal('some message');
+                done();
+            });
+
+            this.server.process.stderr.write('2012-12-16 14:10:36 [INFO] <vvikan> some message');
+        });
+    });
 });
