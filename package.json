@@ -1,10 +1,10 @@
 {
-  "author": "Vegar Vikan",
+  "author": "Vegar",
   "name": "mc_srv",
   "description": "Manage a Minecraft Server instance with JavaScript",
   "version": "0.0.1",
   "repository": {
-    "url": "git@bitbucket.org:format71/mclauncher.git"
+    "url": "git@github.com:vegar/mc_srv.git"
   },
   "main": "index.js",
   "scripts": {
