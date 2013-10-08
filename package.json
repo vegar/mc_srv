@@ -1,6 +1,6 @@
 {
   "author": "Vegar Vikan",
-  "name": "MCLauncher",
+  "name": "mc_manager",
   "description": "Manage a Minecraft Server instance with JavaScript",
   "version": "0.0.1",
   "repository": {

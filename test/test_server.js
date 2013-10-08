@@ -34,7 +34,6 @@ describe('Server', function(){
             launcher.Configuration.standardArguments = 'myArg';
             this.server.start();
             this.server.process.arguments.should.include('myArg');
-
         });
 
         it('should start in right directory', function(){
