@@ -8,5 +8,9 @@ describe('Configuration', function(){
         it('should contain basePath', function(){
             mcl.should.have.property('basePath');
         });
+
+        it('should contain standardArguments', function(){
+       	    mcl.should.have.property('standardArguments', '-Xms1024m -Xmx2G');
+        });
 });
 

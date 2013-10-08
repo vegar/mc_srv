@@ -27,7 +27,14 @@ describe('Server', function(){
         it('should launch process', function(){
             this.server.start();
             assert(this.server.process);
-            assert.equal(this.server.process.arguments[1], this.server.definition.jarfile);
+            this.server.process.arguments.should.include(this.server.definition.jarfile);
+        });
+
+        it('should use arguments from configuration', function(){
+            launcher.Configuration.standardArguments = 'myArg';
+            this.server.start();
+            this.server.process.arguments.should.include('myArg');
+
         });
 
         it('should start in right directory', function(){
