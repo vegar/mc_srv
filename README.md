@@ -70,4 +70,4 @@ A server will emit the following events.
 
 ## Tests ##
 
-Tests can be run using [Mocha][http://visionmedia.github.io/mocha/]. 
+Tests can be run using [Mocha][http://mochajs.org/]. 
